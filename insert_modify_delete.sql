@@ -13,7 +13,7 @@ INSERT INTO esell.POST VALUES (4, 2, 'Party Tomorrow', 'Hope everyone can make i
 INSERT INTO esell.POST VALUES (5, 5, 'Happy Birthday!', 'Happy Birthday Margaret!', '2021-03-25 01:02:25');
 INSERT INTO esell.POST VALUES (6, 6, 'Soccer Practice', 'Practice at noon tomorrow', '2021-03-26 07:34:00');
 
-INSERT INTO esell.FRIENDSHIP VALUES (1, 2); /* John, Barbara */
+INSERT INTO esell.FRIENDSHIP VALUES (1, 2); 	/* John, Barbara */
 INSERT INTO esell.FRIENDSHIP VALUES (1, 3);	/* John, Susan */
 INSERT INTO esell.FRIENDSHIP VALUES (1, 5);	/* John, Debbie */
 INSERT INTO esell.FRIENDSHIP VALUES (1, 4);	/* John, Alexander */

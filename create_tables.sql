@@ -1,20 +1,20 @@
 CREATE DATABASE esell;
 
 CREATE TABLE esell.CUSTOMER (
-cust_id	INT NOT NULL AUTO_INCREMENT, 
+cust_id		INT NOT NULL AUTO_INCREMENT, 
 fname		VARCHAR(15) NOT NULL,   
 lname		VARCHAR(15) NOT NULL, 
 email		VARCHAR(30),
-address	VARCHAR(50),  
+address		VARCHAR(50),  
 sex		CHAR,
 PRIMARY KEY (cust_id)
 );
 
 CREATE TABLE esell.POST (
-post_id	INT NOT NULL AUTO_INCREMENT,
-cust_id	INT NOT NULL,
+post_id		INT NOT NULL AUTO_INCREMENT,
+cust_id		INT NOT NULL,
 post_title	VARCHAR(15) NOT NULL,
-post_body	VARCHAR(50)	NOT NULL,
+post_body	VARCHAR(50) NOT NULL,
 post_date	DATETIME NOT NULL,
 PRIMARY KEY (post_id),
 FOREIGN KEY (cust_id) REFERENCES esell.CUSTOMER (cust_id)
@@ -37,7 +37,7 @@ PRIMARY KEY (merchant_id)
 );
 
 CREATE TABLE esell.PRODUCT (
-prod_id	INT NOT NULL AUTO_INCREMENT,
+prod_id		INT NOT NULL AUTO_INCREMENT,
 merchant_id	INT NOT NULL,
 pname		VARCHAR(35) NOT NULL,
 price		DECIMAL(5, 2) NOT NULL,
@@ -47,8 +47,8 @@ FOREIGN KEY (merchant_id) REFERENCES esell.MERCHANT (merchant_id)
 
 CREATE TABLE esell.`ORDER` (
 order_id	INT NOT NULL AUTO_INCREMENT,
-cust_id	INT NOT NULL,
-prod_id	INT NOT NULL UNIQUE,
+cust_id		INT NOT NULL,
+prod_id		INT NOT NULL UNIQUE,
 has_shipped	BOOLEAN DEFAULT 0,
 order_date	DATETIME NOT NULL,
 PRIMARY KEY (order_id),
@@ -59,7 +59,7 @@ FOREIGN KEY (prod_id) REFERENCES esell.PRODUCT (prod_id)
 CREATE TABLE esell.ADVERTISEMENT (
 ad_id		INT NOT NULL AUTO_INCREMENT,
 merchant_id	INT NOT NULL,
-prod_id	INT NOT NULL UNIQUE,
+prod_id		INT NOT NULL UNIQUE,
 fee		DECIMAL(4, 2) DEFAULT 1.50,
 PRIMARY KEY (ad_id),
 FOREIGN KEY (merchant_id) REFERENCES esell.MERCHANT (merchant_id),
